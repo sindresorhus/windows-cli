@@ -1,0 +1,54 @@
+{
+  "name": "active-win-cli",
+  "version": "0.0.0",
+  "description": "Get the title/id/etc of the active window (OS X)",
+  "license": "MIT",
+  "repository": "sindresorhus/active-win-cli",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bin": {
+    "active-win": "cli.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "osx",
+    "app",
+    "application",
+    "window",
+    "win",
+    "active",
+    "focused",
+    "current",
+    "title",
+    "name",
+    "id",
+    "pid",
+    "screenshot",
+    "screencapture"
+  ],
+  "dependencies": {
+    "active-win": "^0.1.0",
+    "meow": "^3.7.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "execa": "^0.2.2",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true
+  }
+}
