@@ -1,7 +1,7 @@
 {
   "name": "active-win-cli",
   "version": "0.1.0",
-  "description": "Get the title/id/etc of the active window (OS X)",
+  "description": "Get the title/id/etc of the active window (OS X and Linux)",
   "license": "MIT",
   "repository": "sindresorhus/active-win-cli",
   "author": {
@@ -25,6 +25,7 @@
     "cli-app",
     "cli",
     "osx",
+    "linux",
     "app",
     "application",
     "window",
@@ -40,7 +41,7 @@
     "screencapture"
   ],
   "dependencies": {
-    "active-win": "^0.1.0",
+    "active-win": "^0.2.0",
     "meow": "^3.7.0"
   },
   "devDependencies": {
