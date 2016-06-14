@@ -1,7 +1,7 @@
 {
   "name": "active-win-cli",
   "version": "0.2.0",
-  "description": "Get the title/id/etc of the active window (OS X and Linux)",
+  "description": "Get the title/id/etc of the active window (macOS & Linux)",
   "license": "MIT",
   "repository": "sindresorhus/active-win-cli",
   "author": {
@@ -24,6 +24,7 @@
   "keywords": [
     "cli-app",
     "cli",
+    "macos"
     "osx",
     "linux",
     "app",
