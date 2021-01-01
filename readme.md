@@ -1,4 +1,4 @@
-# active-win-cli [![Build Status](https://travis-ci.org/sindresorhus/active-win-cli.svg?branch=master)](https://travis-ci.org/sindresorhus/active-win-cli)
+# active-win-cli
 
 > Get the title/id/etc of the [active window](https://en.wikipedia.org/wiki/Active_window) *(macOS & Linux)*
 
