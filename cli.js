@@ -1,36 +1,43 @@
 #!/usr/bin/env node
-'use strict';
-const meow = require('meow');
-const activeWin = require('active-win');
+import process from 'node:process';
+import meow from 'meow';
+import {activeWindow} from 'get-windows';
 
 const cli = meow(`
 	Usage
-	  $ active-win [property]
+	  $ active-window [property]
 
 	  Returns title, id, app, pid, or the specified property
 
 	Examples
-	  $ active-win
+	  $ active-window
 	  npm install
 	  54
 	  Terminal
 	  368
-	  $ active-win app
+	  $ active-window app
 	  Terminal
-`);
+`, {
+	importMeta: import.meta,
+});
 
-const ret = activeWin.sync();
-const validProps = ['title', 'id', 'app', 'pid'];
-const prop = cli.input[0];
+const returnValue = await activeWindow();
+const validProperties = ['title', 'id', 'app', 'pid'];
+const property = cli.input[0];
 
-if (prop) {
-	if (validProps.indexOf(prop) === -1) {
-		console.error(`Specify a valid property: ${validProps.join(', ')}`);
+if (!returnValue) {
+	console.log('Could not find an active window.');
+	process.exit(1);
+}
+
+if (property) {
+	if (!validProperties.includes(property)) {
+		console.error(`Specify a valid property: ${validProperties.join(', ')}`);
 		process.exit(1);
 	}
 
-	console.log(ret[prop]);
+	console.log(returnValue[property]);
 	process.exit();
 }
 
-console.log(`${ret.title}\n${ret.id}\n${ret.app}\n${ret.pid}`);
+console.log(`${returnValue.title}\n${returnValue.id}\n${returnValue.app}\n${returnValue.pid}`);
